@@ -1,3 +1,4 @@
+import statistics
 def display_main_menu(): 
     print("Enter some numbers separated by commas (e.g. 5, 67,32)" )
 
@@ -23,7 +24,11 @@ def find_min_max(numList) :
 def sort_temperature(numList) :
     numList.sort()
     return (numList)
-#def calc_median_temperature(): 
+
+def calc_median_temperature(List): 
+    median = statistics.median(List)
+    return median
+    
 
 def main(): 
     display_main_menu()
@@ -31,10 +36,11 @@ def main():
     avg = cal_average(num_input)
     max_min_list =  find_min_max(num_input)
     sorted_list = sort_temperature(num_input)
+    median = calc_median_temperature(sorted_list)
     print("This is the average of inputted temperature : " + str(avg))
     print("This is the minimum and maximum temperature : " + str(max_min_list))
     print("This is the list of temperature in ascending order : " , sorted_list)
-
+    print("This is the median of the temperature inputted :", median)
 
 
 if __name__ == "__main__": 
